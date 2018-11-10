@@ -53,12 +53,13 @@ for datadir in DATA_SUBSETS:
     images_list = glob.glob(datadir + "/*/*.jpg")
 
     # Process images
-    for i, path in enumerate(images_list[:10]):
+    for i, path in enumerate(images_list):
         try:
             # Load image
             im = skimage.io.imread(path)
             im = helper.preprocess(im)
-            if im is None: raise Exception("Could not load image")
+            if im is None:
+                raise Exception("Could not load image")
 
             # Run model to get features
             code = features_model.predict(im).flatten()
