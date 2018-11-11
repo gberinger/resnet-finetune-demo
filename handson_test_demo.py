@@ -57,10 +57,11 @@ for path in paths:
     # Classify
     code = features_model.predict(transformed).reshape(1, -1)
     prediction = classifier_model.predict(code)
-
-    # Print result
     prediction = prediction.flatten()
-    top_idx = np.argsort(prediction)[::-1][:5]
+
+    # TASK: Get 5 labels with the highest prediction score (probability)
+    top_idx = ...
+
     for i, idx in enumerate(top_idx):
         print("{}. {:.2f} {}".format(i + 1, prediction[idx], IDS_TO_NAMES[str(idx)]))
 

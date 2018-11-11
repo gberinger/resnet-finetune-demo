@@ -23,35 +23,37 @@ FEATURES_FILENAME = "features-resnet152.npy"
 LABELS_FILENAME = "labels-resnet152.npy"
 IDS_TO_NAMES = json.load(open("ids_to_names.json"))
 
-
 # Load test data
 test_features = np.load(os.path.join(TEST_DIR, FEATURES_FILENAME))
 test_labels = np.load(os.path.join(TEST_DIR, LABELS_FILENAME))
 
-# Load top layer classifier model
-classifier_model = Sequential()
-classifier_model.add(Dense(67, activation='softmax', input_shape=test_features.shape[1:]))
-classifier_model.load_weights(WEIGHTS_CLASSIFIER)
+# TASK: Load top layer classifier model. To do this, you have to specify the same model as in train.py
+#       and the load the weights from checkpoint.
+classifier_model = ...
+classifier_model.add(...)
+...
 
 # Classify the test set, count correct answers
 all_count = defaultdict(int)
 correct_count = defaultdict(int)
-for code, gt in zip(test_features, test_labels):
+for code, correct_label in zip(test_features, test_labels):
 
     code = np.expand_dims(code, axis=0)
-    prediction = classifier_model.predict(code)
-    result = np.argmax(prediction)
+    # TASK: Use classifier to predict a probability distribution over classes.
+    #       As a result, choose the most probable label.
+    prediction = ...
+    result = ...
 
-    all_count[gt] += 1
-    if gt == result:
-        correct_count[gt] += 1
+    # Record which class occured and wheter the prediction was successful
+    all_count[correct_label] += 1
+    if correct_label == result:
+        correct_count[correct_label] += 1
 
 # Calculate accuracies
 print("Accuracy per class:")
 for classid in all_count.keys():
     print("\t{}: {:.5f}".format(IDS_TO_NAMES[str(classid)], correct_count[classid] / all_count[classid]))
 
-print("Average per class acc:",
-      np.mean([correct_count[classid] / all_count[classid] for classid in all_count.keys()]))
-print("Overall acc:",
-      sum(correct_count.values()) / sum(all_count.values()))
+# TASK: Calculate average per class accuracy and overall accuracy
+print("Average per class acc: {:.5f}".format(...))
+print("Overall acc: {:.5f}".format(...))

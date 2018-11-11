@@ -39,6 +39,9 @@ This method simply freezes the entire Resnet-152 model and retrains the last ful
 <img height="250" src="http://ml.cta.ai/blog/resnet-finetune-demo/chart.png">
 </a></p>
 
+#### Hands-on
+Since this is an exercise, some code was deleted for you to complete. Files to be completed are called
+`handson_{name}.py`. Correct solution can be found under each `{name}.py` script. Good luck!
 
 ##### References
 
