@@ -27,14 +27,14 @@ from resnet import resnet152
 
 
 DATA_SUBSETS = [
-    os.path.expanduser("~/ml/data/indoor/train"),
-    os.path.expanduser("~/ml/data/indoor/val"),
-    os.path.expanduser("~/ml/data/indoor/test"),
+    os.path.expanduser("ml/data/indoor/train"),
+    os.path.expanduser("ml/data/indoor/val"),
+    os.path.expanduser("ml/data/indoor/test"),
 ]
 FEATURES_FILENAME = "features-resnet152.npy"
 LABELS_FILENAME = "labels-resnet152.npy"
 PATHS_FILENAME = "paths-resnet152.json"
-WEIGHTS_RESNET = os.path.expanduser("~/ml/models/keras/resnet152/resnet152_weights_tf.h5")
+WEIGHTS_RESNET = os.path.expanduser("ml/models/keras/resnet152/resnet152_weights_tf.h5")
 NAMES_TO_IDS = json.load(open("names_to_ids.json"))
 
 

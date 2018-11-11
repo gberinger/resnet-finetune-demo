@@ -22,7 +22,7 @@ import helper
 from resnet import resnet152
 
 
-WEIGHTS_RESNET = os.path.expanduser("~/ml/models/keras/resnet152/resnet152_weights_tf.h5")
+WEIGHTS_RESNET = os.path.expanduser("ml/models/keras/resnet152/resnet152_weights_tf.h5")
 WEIGHTS_CLASSIFIER = "classifier_weights.h5"
 IDS_TO_NAMES = json.load(open("ids_to_names.json"))
 
@@ -40,7 +40,7 @@ classifier_model.add(Dense(67, activation='softmax', input_shape=[feature_vector
 classifier_model.load_weights(WEIGHTS_CLASSIFIER)
 
 # Load test images
-paths = glob.glob(os.path.expanduser("~/ml/data/indoor/test/*/*.jpg"))
+paths = glob.glob(os.path.expanduser("ml/data/indoor/test/*/*.jpg"))
 random.shuffle(paths)
 
 # Classify images

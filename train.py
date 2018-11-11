@@ -19,8 +19,8 @@ from keras.models import Sequential
 from keras.optimizers import SGD
 
 
-TRAIN_DIR = os.path.expanduser("~/ml/data/indoor/train")
-VAL_DIR = os.path.expanduser("~/ml/data/indoor/val")
+TRAIN_DIR = os.path.expanduser("ml/data/indoor/train")
+VAL_DIR = os.path.expanduser("ml/data/indoor/val")
 FEATURES_FILENAME = "features-resnet152.npy"
 LABELS_FILENAME = "labels-resnet152.npy"
 WEIGHTS_CLASSIFIER = "classifier_weights.h5"

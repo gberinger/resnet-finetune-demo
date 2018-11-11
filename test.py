@@ -17,7 +17,7 @@ from keras.models import Sequential
 
 
 WEIGHTS_CLASSIFIER = "classifier_weights.h5"
-TEST_DIR = os.path.expanduser("~/ml/data/indoor/test")
+TEST_DIR = os.path.expanduser("ml/data/indoor/test")
 FEATURES_FILENAME = "features-resnet152.npy"
 LABELS_FILENAME = "labels-resnet152.npy"
 

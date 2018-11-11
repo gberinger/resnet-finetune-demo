@@ -22,8 +22,8 @@ import helper
 from resnet import resnet152
 
 
-WEIGHTS = os.path.expanduser("~/ml/models/keras/resnet152/resnet152_weights_tf.h5")
-CLSID_TO_HUMAN = os.path.expanduser('~/ml/models/keras/resnet152/imagenet1000_clsid_to_human.txt')
+WEIGHTS = os.path.expanduser("ml/models/keras/resnet152/resnet152_weights_tf.h5")
+CLSID_TO_HUMAN = os.path.expanduser('ml/models/keras/resnet152/imagenet1000_clsid_to_human.txt')
 
 
 model = resnet152.resnet152_model(WEIGHTS)
