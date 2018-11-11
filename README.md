@@ -8,14 +8,28 @@ A simple experiment with finetuning Resnet-152 in Keras for classifying indoor p
 
 Detailed description of this experiment can be found here: http://www.cta.ai/en/publications/02
 
-The code is built on Keras 2.0 (ver. 2.0.4) on TensorFlow backend (ver. 1.2.0-rc2) using Python 3.6.
+The code is built on Keras 2.0 (ver. 2.0.4) on TensorFlow backend (ver. 1.2.0-rc2) using Python 3.6, but should work
+on newer Keras and Tensorflow versions.
 
-To run this experiment you should download the data package which is available [here](http://ml.cta.ai/blog/resnet-finetune-demo/resnet-finetune-demo-data-package.zip). Unpack it in your home directory for compliance with the code. The data package consists of several elements:
+#### Environment
+
+To prepare the environment, install the requirements:
+
+`pip install -r requirements.txt`
+
+Personally, I suggest installing [Anaconda](https://www.anaconda.com/) for this and future tasks, as it contains a lot 
+of data science packages and allows to create many standalone environments. If you use Anaconda, you just need to 
+install `tensorflow` and `Keras`  with pip or conda (CPU versions are good enough for this task).
+
+#### Data
+
+To run this experiment you should download the data package which is available 
+[here](http://ml.cta.ai/blog/resnet-finetune-demo/resnet-finetune-demo-data-package.zip). 
+Unpack it in this repository for compliance with the code. The data package consists of several elements:
 - [Indoor-67](http://web.mit.edu/torralba/www/indoor.html) images, split into train, val and test subsets
 - ImageNet-trained Resnet-152 weights, acquired from [here](https://github.com/flyyufelix/cnn_finetune)
 - Text file mapping ImageNet ids to class names, acquired from [here](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
 - Cached features from Resnet-152 model and labels for images in train, val and test subsets
-
 
 #### Method summary
 
